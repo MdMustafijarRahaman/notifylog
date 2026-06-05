@@ -248,9 +248,61 @@
       h1 { font-size: 1.75rem; }
       h2 { font-size: 1.1rem; }
       section, .intro { padding: 18px; }
-      .perm-table { font-size: 0.82rem; }
-      .perm-table td:first-child { font-size: 0.75rem; }
       .meta-info { flex-direction: column; gap: 6px; }
+      
+      /* Convert permissions table to stacked cards on mobile */
+      .perm-table thead { display: none; }
+      
+      .perm-table,
+      .perm-table tbody,
+      .perm-table tr,
+      .perm-table td {
+        display: block;
+        width: 100%;
+      }
+      
+      .perm-table tr {
+        margin-bottom: 12px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+      }
+      
+      .perm-table tr:last-child { margin-bottom: 0; }
+      
+      .perm-table td {
+        padding: 0;
+        border-bottom: none;
+      }
+      
+      .perm-table td:first-child {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 0.78rem;
+        word-break: break-all;
+        white-space: normal;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      
+      .perm-table td:last-child {
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+    }
+    
+    /* Small phones (under 380px) */
+    @media (max-width: 380px) {
+      body { padding: 12px 10px 32px; }
+      h1 { font-size: 1.55rem; }
+      .logo { width: 60px; height: 60px; }
+      .logo svg { width: 30px; height: 30px; }
+      section, .intro { padding: 16px; }
+      ul li { padding-left: 24px; font-size: 0.88rem; }
+      .perm-table td:first-child { font-size: 0.72rem; }
     }
     
     @media print {
