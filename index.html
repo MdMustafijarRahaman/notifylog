@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — NotifyLog</title>
+  <meta name="description" content="Privacy Policy for NotifyLog — Notification History Android app. Privacy-first, local-only data storage.">
+  <meta name="author" content="NotifyLog">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="NotifyLog Privacy Policy">
+  <meta property="og:description" content="Privacy-first notification history. Your data stays on your device.">
+  <meta property="og:type" content="website">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #0A0A0A;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.10);
+      --accent: #4C8EF7;
+      --success: #00BFA6;
+      --danger: #FF6B6B;
+      --warning: #FFB74C;
+      --text: #FFFFFF;
+      --text-secondary: rgba(255, 255, 255, 0.65);
+      --text-tertiary: rgba(255, 255, 255, 0.45);
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+      padding: 24px 16px 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container { max-width: 760px; margin: 0 auto; }
+    
+    header {
+      text-align: center;
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 32px;
+    }
+    
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--accent), var(--success));
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(76, 142, 247, 0.25);
+    }
+    
+    .logo svg { width: 36px; height: 36px; color: white; }
+    
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    
+    .app-tagline {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    
+    .meta-info {
+      display: inline-flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+      padding: 12px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+    }
+    
+    .meta-info strong { color: var(--text-secondary); font-weight: 500; }
+    
+    .intro {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    .intro strong { color: var(--text); }
+    
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    
+    section.highlight {
+      background: rgba(0, 191, 166, 0.08);
+      border-color: rgba(0, 191, 166, 0.25);
+    }
+    
+    section.warning {
+      background: rgba(255, 183, 76, 0.06);
+      border-color: rgba(255, 183, 76, 0.20);
+    }
+    
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    
+    section.highlight h2 { color: var(--success); }
+    section.warning h2 { color: var(--warning); }
+    
+    .section-num {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+    
+    p { margin-bottom: 12px; color: var(--text-secondary); font-size: 0.95rem; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); font-weight: 600; }
+    
+    ul { margin: 12px 0; padding-left: 0; list-style: none; }
+    
+    ul li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+    
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 12px;
+      top: 8px;
+    }
+    
+    ul.not-collect li::before { content: "✗"; color: var(--danger); font-size: 0.85rem; top: 9px; }
+    ul.collect li::before { content: "✓"; color: var(--success); font-size: 0.85rem; top: 9px; }
+    
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.88rem;
+    }
+    
+    .perm-table th, .perm-table td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+    
+    .perm-table th {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .perm-table td:first-child {
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+      color: var(--text);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    
+    .perm-table td { color: var(--text-secondary); }
+    
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent);
+      transition: opacity 0.2s;
+    }
+    
+    a:hover { opacity: 0.75; }
+    
+    .contact-card {
+      background: rgba(76, 142, 247, 0.08);
+      border: 1px solid rgba(76, 142, 247, 0.25);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    
+    .contact-card h2 {
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    
+    .email-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white !important;
+      border-radius: 10px;
+      border-bottom: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      margin-top: 32px;
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+    }
+    
+    footer p { margin-bottom: 6px; color: var(--text-tertiary); }
+    
+    /* Mobile */
+    @media (max-width: 600px) {
+      body { padding: 16px 12px 40px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.1rem; }
+      section, .intro { padding: 18px; }
+      .perm-table { font-size: 0.82rem; }
+      .perm-table td:first-child { font-size: 0.75rem; }
+      .meta-info { flex-direction: column; gap: 6px; }
+    }
+    
+    @media print {
+      body { background: white; color: black; padding: 20px; }
+      section, .intro, .contact-card { background: #f9f9f9; border: 1px solid #ddd; box-shadow: none; }
+      h1, h2 { color: #1a73e8; }
+      a { color: #1a73e8; }
+      .logo { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 00-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="app-tagline">NotifyLog — Notification History for Android</p>
+      <div class="meta-info">
+        <span><strong>Effective Date:</strong> June 5, 2026</span>
+        <span><strong>Last Updated:</strong> June 5, 2026</span>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p><strong>Your privacy is our priority.</strong> NotifyLog is designed with a privacy-first approach: your notification data stays on your device, and we make every effort to be transparent about how the app works. Please read this policy carefully to understand our practices.</p>
+    </div>
+
+    <section>
+      <h2><span class="section-num">1.</span> What Data We Collect</h2>
+      <p>NotifyLog reads notifications delivered to your Android device to save them for your later review. Specifically, we collect:</p>
+      <ul class="collect">
+        <li>App name and package name of the app that sent the notification</li>
+        <li>Notification title (sender name or subject)</li>
+        <li>Notification body (message text)</li>
+        <li>Timestamp of when the notification was received and dismissed</li>
+        <li>Whether the notification was cleared/removed and when</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <h2><span class="section-num">2.</span> What We Do NOT Collect</h2>
+      <ul class="not-collect">
+        <li>Your personal name, email address, or any account credentials</li>
+        <li>Your physical location (no location permission is requested)</li>
+        <li>Your contacts, call logs, photos, files, or media</li>
+        <li>Passwords, payment information, or financial data</li>
+        <li>Notification content from apps you have whitelisted off</li>
+        <li>Biometric data, health data, or sensor data</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="section-num">3.</span> Where Your Data Is Stored</h2>
+      <p>All notification data is stored <strong>exclusively on your device</strong> in a local SQLite database. Your notification content never leaves your device.</p>
+      <p>The only network connections the app makes are to <strong>Google AdMob servers to display ads</strong> (see Third-Party Services section below). These connections do not transmit any of your notification content. We do not operate any servers, cloud services, or remote databases that receive your data.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">4.</span> How We Use Your Data</h2>
+      <p>We use the collected notification data solely to:</p>
+      <ul>
+        <li>Display your notification history within the app</li>
+        <li>Allow you to search and filter past notifications</li>
+        <li>Group notifications by app for easier browsing</li>
+        <li>Detect when notifications are cleared/dismissed</li>
+      </ul>
+      <p><strong>We do NOT</strong> use your notification data for profiling, advertising targeting, analytics, or any form of behavioral analysis.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">5.</span> Data Retention</h2>
+      <p>By default, notifications older than <strong>7 days are automatically deleted</strong> from your device. You can change this in Settings → History Duration (options: 7 days, 30 days, or Forever).</p>
+      <p>You can delete all stored data anytime via <strong>Settings → Delete all data</strong>. This action is permanent and cannot be undone.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">6.</span> Third-Party Services</h2>
+      <p>NotifyLog uses the following third-party services:</p>
+      
+      <p><strong>Google AdMob (Advertising)</strong></p>
+      <ul>
+        <li><strong>Purpose:</strong> Display banner, interstitial, and rewarded ads to support free development of the app</li>
+        <li><strong>Data accessed:</strong> Advertising ID, IP address, general device information (model, OS version), approximate location based on IP address</li>
+        <li><strong>Personalization:</strong> You can opt out of personalized ads via the consent dialog (EU/UK users) or by disabling ad personalization in your Google account settings</li>
+        <li><strong>Privacy policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      </ul>
+      
+      <p><strong>Google User Messaging Platform (UMP) SDK</strong></p>
+      <ul>
+        <li><strong>Purpose:</strong> Manage your consent for personalized advertising (GDPR/UK GDPR compliance)</li>
+        <li><strong>Data accessed:</strong> Consent choices only — stored locally on your device</li>
+      </ul>
+      
+      <p><strong>NotifyLog does NOT use:</strong></p>
+      <ul class="not-collect">
+        <li>Firebase Analytics or any analytics SDK</li>
+        <li>Firebase Crashlytics or any crash reporting service</li>
+        <li>Facebook SDK or any social media tracking</li>
+        <li>Any third-party data collection service beyond what is listed above</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <h2><span class="section-num">7.</span> Data Sharing</h2>
+      <p>We do <strong>NOT sell, rent, or share</strong> your notification data with any third party. Your notification content stays exclusively on your device.</p>
+      <p>The only data transmitted from your device is the anonymized advertising-related data that Google AdMob collects (described in Section 6), which is independent of and unrelated to your notification content.</p>
+    </section>
+
+    <section class="warning">
+      <h2><span class="section-num">8.</span> Notification Access Disclosure</h2>
+      <p>NotifyLog uses Android's <strong>NotificationListenerService</strong> permission to read incoming notifications. This permission is required for the app's core function: logging notification history. Without it, the app cannot work.</p>
+      
+      <p><strong>How we use this access:</strong></p>
+      <ul class="collect">
+        <li>Read notification title, body, app name, and timestamp</li>
+        <li>Save this data to your device's local SQLite database</li>
+        <li>Detect when notifications are cleared or dismissed</li>
+      </ul>
+      
+      <p><strong>How we do NOT use this access:</strong></p>
+      <ul class="not-collect">
+        <li>Send notification content to any server or third party</li>
+        <li>Share notification content with other apps</li>
+        <li>Use notification content for advertising or profiling</li>
+        <li>Read notifications from apps you have whitelisted off in Settings</li>
+        <li>Access notifications from password managers, banking, or other sensitive apps (if you whitelist them off)</li>
+      </ul>
+      
+      <p>You can revoke notification access anytime via <strong>Android Settings → Apps → Special access → Notification access → NotifyLog → Disable</strong>.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">9.</span> Permissions Used</h2>
+      <table class="perm-table">
+        <thead>
+          <tr><th>Permission</th><th>Reason</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BIND_NOTIFICATION_LISTENER_SERVICE</td>
+            <td>Required to read incoming notifications and log them locally. This is the core functionality of the app.</td>
+          </tr>
+          <tr>
+            <td>RECEIVE_BOOT_COMPLETED</td>
+            <td>Re-activates the notification listener after your device restarts, so you don't miss any notifications.</td>
+          </tr>
+          <tr>
+            <td>FOREGROUND_SERVICE</td>
+            <td>Keeps a small persistent notification to ensure the listener stays active in the background (required on aggressive battery-optimization devices like Xiaomi, Oppo, Vivo).</td>
+          </tr>
+          <tr>
+            <td>POST_NOTIFICATIONS</td>
+            <td>Declared for the foreground service status notification only. We do not send any other notifications.</td>
+          </tr>
+          <tr>
+            <td>INTERNET</td>
+            <td>Required by Google AdMob to serve ads. No notification data is transmitted over the internet.</td>
+          </tr>
+          <tr>
+            <td>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</td>
+            <td>To request battery optimization exclusion so the notification listener is not killed by the system. You can decline this request.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="section-num">10.</span> Your Rights</h2>
+      <p>You have full control over your data:</p>
+      <ul>
+        <li><strong>View:</strong> All stored notifications are visible in the app</li>
+        <li><strong>Export:</strong> Settings → Export my data — downloads a JSON file of all your data</li>
+        <li><strong>Delete:</strong> Settings → Delete all data — permanently removes all stored data</li>
+        <li><strong>Selective delete:</strong> Delete individual notifications, entire app categories, or by date range</li>
+        <li><strong>Whitelist:</strong> Disable logging for specific apps in Settings → Logged Apps</li>
+        <li><strong>Revoke:</strong> Disable notification access entirely in Android system settings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="section-num">11.</span> Region-Specific Rights</h2>
+      
+      <p><strong>If you are located in the European Union (GDPR) or United Kingdom (UK GDPR):</strong></p>
+      <ul>
+        <li>Right to access, rectify, or erase your data</li>
+        <li>Right to object to processing</li>
+        <li>Right to data portability (use the Export feature in Settings)</li>
+        <li>Right to withdraw consent for personalized ads (UMP consent dialog)</li>
+        <li>Right to lodge a complaint with your local data protection authority</li>
+      </ul>
+      
+      <p><strong>If you are located in California, USA (CCPA/CPRA):</strong></p>
+      <ul>
+        <li>Right to know what personal information is collected</li>
+        <li>Right to delete your personal information</li>
+        <li>Right to opt-out of the sale of personal information (<strong>we do not sell data</strong>)</li>
+        <li>Right to non-discrimination for exercising your rights</li>
+      </ul>
+      
+      <p>To exercise these rights, use the in-app <strong>Settings → Delete all data</strong> or <strong>Settings → Export my data</strong> features, or contact us at the email below.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">12.</span> Children's Privacy</h2>
+      <p>NotifyLog is <strong>not intended for users under the age of 13</strong> (or the equivalent minimum age in your jurisdiction). We do not knowingly collect data from children. If you believe a child has been using the app, please contact us and we will help you delete all data from the device.</p>
+      <p>For users between 13–18, we recommend <strong>parental supervision</strong> when granting notification access, as notifications may contain personal communications.</p>
+    </section>
+
+    <section>
+      <h2><span class="section-num">13.</span> Changes to This Privacy Policy</h2>
+      <p>We may update this privacy policy from time to time to reflect changes in our practices or for legal reasons. Significant changes will be communicated via:</p>
+      <ul>
+        <li>An in-app notification on next launch</li>
+        <li>Updated "Last Updated" date at the top of this document</li>
+        <li>Release notes in the Google Play Store</li>
+      </ul>
+      <p>Continued use of the app after a policy update constitutes acceptance of the new terms. We encourage you to review this policy periodically.</p>
+    </section>
+
+    <section class="contact-card">
+      <h2><span class="section-num">14.</span> Contact Us</h2>
+      <p>For questions, concerns, or requests regarding this privacy policy:</p>
+      <a href="mailto:technotex901@gmail.com" class="email-link">technotex901@gmail.com</a>
+    </section>
+
+    <footer>
+      <p><strong>NotifyLog</strong> — Notification History for Android</p>
+      <p>Privacy-first. Local-only. No tracking. No analytics.</p>
+      <p>© 2026 NotifyLog. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
