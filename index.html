@@ -8,7 +8,6 @@
   <meta name="author" content="NotifyLog">
   <meta name="robots" content="index, follow">
   
-  <!-- Open Graph for social sharing -->
   <meta property="og:title" content="NotifyLog Privacy Policy">
   <meta property="og:description" content="Privacy-first notification history. Your data stays on your device.">
   <meta property="og:type" content="website">
@@ -166,6 +165,23 @@
     ul.not-collect li::before { content: "✗"; color: var(--danger); font-size: 0.85rem; top: 9px; }
     ul.collect li::before { content: "✓"; color: var(--success); font-size: 0.85rem; top: 9px; }
     
+    /* Subsection styling — used inside Section 1 for "What we do NOT collect" */
+    .subsection-not-collect {
+      margin-top: 20px;
+      padding: 16px 18px;
+      background: rgba(0, 191, 166, 0.07);
+      border: 1px solid rgba(0, 191, 166, 0.20);
+      border-radius: 12px;
+    }
+    
+    .subsection-title {
+      color: var(--success);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+    
     .perm-table {
       width: 100%;
       border-collapse: collapse;
@@ -250,6 +266,9 @@
       section, .intro { padding: 18px; }
       .meta-info { flex-direction: column; gap: 6px; }
       
+      .subsection-not-collect { padding: 14px; }
+      .subsection-title { font-size: 0.95rem; }
+      
       /* Convert permissions table to stacked cards on mobile */
       .perm-table thead { display: none; }
       
@@ -294,7 +313,6 @@
       }
     }
     
-    /* Small phones (under 380px) */
     @media (max-width: 380px) {
       body { padding: 12px 10px 32px; }
       h1 { font-size: 1.55rem; }
@@ -307,7 +325,7 @@
     
     @media print {
       body { background: white; color: black; padding: 20px; }
-      section, .intro, .contact-card { background: #f9f9f9; border: 1px solid #ddd; box-shadow: none; }
+      section, .intro, .contact-card, .subsection-not-collect { background: #f9f9f9; border: 1px solid #ddd; box-shadow: none; }
       h1, h2 { color: #1a73e8; }
       a { color: #1a73e8; }
       .logo { display: none; }
@@ -345,28 +363,28 @@
         <li>Timestamp of when the notification was received and dismissed</li>
         <li>Whether the notification was cleared/removed and when</li>
       </ul>
-    </section>
-
-    <section class="highlight">
-      <h2><span class="section-num">2.</span> What We Do NOT Collect</h2>
-      <ul class="not-collect">
-        <li>Your personal name, email address, or any account credentials</li>
-        <li>Your physical location (no location permission is requested)</li>
-        <li>Your contacts, call logs, photos, files, or media</li>
-        <li>Passwords, payment information, or financial data</li>
-        <li>Notification content from apps you have whitelisted off</li>
-        <li>Biometric data, health data, or sensor data</li>
-      </ul>
+      
+      <div class="subsection-not-collect">
+        <p class="subsection-title">We do NOT collect:</p>
+        <ul class="not-collect">
+          <li>Your personal name, email address, or any account credentials</li>
+          <li>Your physical location (no location permission is requested)</li>
+          <li>Your contacts, call logs, photos, files, or media</li>
+          <li>Passwords, payment information, or financial data</li>
+          <li>Notification content from apps you have whitelisted off</li>
+          <li>Biometric data, health data, or sensor data</li>
+        </ul>
+      </div>
     </section>
 
     <section>
-      <h2><span class="section-num">3.</span> Where Your Data Is Stored</h2>
+      <h2><span class="section-num">2.</span> Where Your Data Is Stored</h2>
       <p>All notification data is stored <strong>exclusively on your device</strong> in a local SQLite database. Your notification content never leaves your device.</p>
       <p>The only network connections the app makes are to <strong>Google AdMob servers to display ads</strong> (see Third-Party Services section below). These connections do not transmit any of your notification content. We do not operate any servers, cloud services, or remote databases that receive your data.</p>
     </section>
 
     <section>
-      <h2><span class="section-num">4.</span> How We Use Your Data</h2>
+      <h2><span class="section-num">3.</span> How We Use Your Data</h2>
       <p>We use the collected notification data solely to:</p>
       <ul>
         <li>Display your notification history within the app</li>
@@ -378,13 +396,13 @@
     </section>
 
     <section>
-      <h2><span class="section-num">5.</span> Data Retention</h2>
+      <h2><span class="section-num">4.</span> Data Retention</h2>
       <p>By default, notifications older than <strong>7 days are automatically deleted</strong> from your device. You can change this in Settings → History Duration (options: 7 days, 30 days, or Forever).</p>
       <p>You can delete all stored data anytime via <strong>Settings → Delete all data</strong>. This action is permanent and cannot be undone.</p>
     </section>
 
     <section>
-      <h2><span class="section-num">6.</span> Third-Party Services</h2>
+      <h2><span class="section-num">5.</span> Third-Party Services</h2>
       <p>NotifyLog uses the following third-party services:</p>
       
       <p><strong>Google AdMob (Advertising)</strong></p>
@@ -411,13 +429,13 @@
     </section>
 
     <section class="highlight">
-      <h2><span class="section-num">7.</span> Data Sharing</h2>
+      <h2><span class="section-num">6.</span> Data Sharing</h2>
       <p>We do <strong>NOT sell, rent, or share</strong> your notification data with any third party. Your notification content stays exclusively on your device.</p>
-      <p>The only data transmitted from your device is the anonymized advertising-related data that Google AdMob collects (described in Section 6), which is independent of and unrelated to your notification content.</p>
+      <p>The only data transmitted from your device is the anonymized advertising-related data that Google AdMob collects (described in Section 5), which is independent of and unrelated to your notification content.</p>
     </section>
 
     <section class="warning">
-      <h2><span class="section-num">8.</span> Notification Access Disclosure</h2>
+      <h2><span class="section-num">7.</span> Notification Access Disclosure</h2>
       <p>NotifyLog uses Android's <strong>NotificationListenerService</strong> permission to read incoming notifications. This permission is required for the app's core function: logging notification history. Without it, the app cannot work.</p>
       
       <p><strong>How we use this access:</strong></p>
@@ -440,7 +458,7 @@
     </section>
 
     <section>
-      <h2><span class="section-num">9.</span> Permissions Used</h2>
+      <h2><span class="section-num">8.</span> Permissions Used</h2>
       <table class="perm-table">
         <thead>
           <tr><th>Permission</th><th>Reason</th></tr>
@@ -475,7 +493,7 @@
     </section>
 
     <section>
-      <h2><span class="section-num">10.</span> Your Rights</h2>
+      <h2><span class="section-num">9.</span> Your Rights</h2>
       <p>You have full control over your data:</p>
       <ul>
         <li><strong>View:</strong> All stored notifications are visible in the app</li>
@@ -488,7 +506,7 @@
     </section>
 
     <section>
-      <h2><span class="section-num">11.</span> Region-Specific Rights</h2>
+      <h2><span class="section-num">10.</span> Region-Specific Rights</h2>
       
       <p><strong>If you are located in the European Union (GDPR) or United Kingdom (UK GDPR):</strong></p>
       <ul>
@@ -511,13 +529,13 @@
     </section>
 
     <section>
-      <h2><span class="section-num">12.</span> Children's Privacy</h2>
+      <h2><span class="section-num">11.</span> Children's Privacy</h2>
       <p>NotifyLog is <strong>not intended for users under the age of 13</strong> (or the equivalent minimum age in your jurisdiction). We do not knowingly collect data from children. If you believe a child has been using the app, please contact us and we will help you delete all data from the device.</p>
       <p>For users between 13–18, we recommend <strong>parental supervision</strong> when granting notification access, as notifications may contain personal communications.</p>
     </section>
 
     <section>
-      <h2><span class="section-num">13.</span> Changes to This Privacy Policy</h2>
+      <h2><span class="section-num">12.</span> Changes to This Privacy Policy</h2>
       <p>We may update this privacy policy from time to time to reflect changes in our practices or for legal reasons. Significant changes will be communicated via:</p>
       <ul>
         <li>An in-app notification on next launch</li>
@@ -528,7 +546,7 @@
     </section>
 
     <section class="contact-card">
-      <h2><span class="section-num">14.</span> Contact Us</h2>
+      <h2><span class="section-num">13.</span> Contact Us</h2>
       <p>For questions, concerns, or requests regarding this privacy policy:</p>
       <a href="mailto:technotex901@gmail.com" class="email-link">technotex901@gmail.com</a>
     </section>
